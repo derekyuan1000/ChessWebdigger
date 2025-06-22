@@ -26,4 +26,4 @@ This app is built with:
 
 ## Deployment
 
-This application is ready to be deployed on Render.com using the included `render.yaml` configuration file.
+Check out the live demo at [https://chess-webdigger.derekyuan.co.uk](https://chess-webdigger.derekyuan.co.uk)
