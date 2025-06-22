@@ -2,6 +2,12 @@
 
 A web application that helps chess players find their online usernames across popular chess platforms like Chess.com and Lichess.
 
+## Documentation
+
+For detailed documentation, check out our [GitHub Documentation](https://github.com/derekyuan1000/chess-webdigger/blob/main/docs/README.md).
+
+You can also access the [Raw GitHub Documentation](https://raw.githubusercontent.com/derekyuan1000/chess-webdigger/main/docs/README.md).
+
 ## Features
 
 - Search for usernames using a player's full name
