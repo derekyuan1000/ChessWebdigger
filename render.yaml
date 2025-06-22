@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: chess-webdigger
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+

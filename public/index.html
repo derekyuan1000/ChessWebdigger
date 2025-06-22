@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Username Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chess Username Finder</h1>
+
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="name">Full Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="e.g. Magnus Carlsen" required>
+            </div>
+            <div class="form-group">
+                <label for="fide">FIDE ID:</label>
+                <input type="text" id="fide" name="fide" placeholder="e.g. 1503014">
+            </div>
+            <div class="form-group">
+                <label for="federation">Federation:</label>
+                <input type="text" id="federation" name="federation" placeholder="e.g. NOR">
+            </div>
+            <div class="form-group">
+                <label for="ratings">FIDE Rating:</label>
+                <input type="text" id="ratings" name="ratings" placeholder="e.g. 2855">
+            </div>
+            <div class="form-group">
+                <label for="birthYear">Birth Year:</label>
+                <input type="text" id="birthYear" name="birthYear" placeholder="e.g. 1990">
+            </div>
+            <button type="submit"><i class="fas fa-search"></i> Find Usernames</button>
+        </form>
+
+        <div class="rating-comparison">
+            <h4><i class="fas fa-info-circle"></i> Rating Differences</h4>
+            <p>FIDE ratings are typically 100-200 points higher than Chess.com ratings and 0-100 points higher than Lichess ratings for the same player. Lichess ratings tend to be higher than Chess.com ratings by about 100-150 points. Check out <a href="https://chessgoals.com/rating-comparison/ ">this webiste</a> for more information</p>
+        </div>
+
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+
+            <div id="found-players-summary" class="results-section hidden">
+                <h3><i class="fas fa-chart-line"></i> Found Players Average Ratings</h3>
+                <div id="found-players-stats" class="found-players-stats"></div>
+            </div>
+
+            <div class="results-section">
+                <h3><i class="fas fa-chess-king"></i> Chess.com</h3>
+                <div id="chesscom-results"></div>
+            </div>
+            <div class="results-section">
+                <h3><i class="fas fa-chess-knight"></i> Lichess</h3>
+                <div id="lichess-results"></div>
+            </div>
+        </div>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Searching for players across platforms...</p>
+        </div>
+
+        <div id="opening-analysis" class="results-section hidden">
+            <h2><i class="fas fa-chess-board"></i> Opening Analysis</h2>
+            <p>View the chess positions played by the selected users:</p>
+
+            <div class="player-selection">
+                <h4>Select Players to Include</h4>
+                <div id="player-checkboxes" class="player-checkboxes"></div>
+                <div class="form-actions">
+                    <button id="select-all-btn" class="secondary-btn" type="button">Select All</button>
+                    <button id="deselect-all-btn" class="secondary-btn" type="button">Deselect All</button>
+                </div>
+                <div class="form-actions">
+                    <button id="analyze-btn" class="primary-btn" type="button">Analyze Openings</button>
+                </div>
+            </div>
+
+            <div class="analysis-results">
+                <div class="chess-board-container">
+                    <div id="chess-board" class="chess-board"></div>
+                    <div class="board-controls">
+                        <button id="prev-move" class="move-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+                        <button id="next-move" class="move-btn">Next <i class="fas fa-chevron-right"></i></button>
+                        <button id="flip-board" class="move-btn"><i class="fas fa-retweet"></i> Flip Board</button>
+                    </div>
+                </div>
+                <div id="move-list" class="move-list"></div>
+                <div id="position-stats" class="position-stats"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="openingAnalysis.js"></script>
+</body>
+</html>
