@@ -26,4 +26,4 @@ This app is built with:
 
 ## Deployment
 
-Check out the live demo at [https://chess-webdigger.derekyuan.co.uk](https://chess-webdigger.derekyuan.co.uk)
+Check out the live demo at [https://chess-webdigger.derekyuan.co.uk](https://chess-webdigger.derekyuan.co.uk), it may take a few seconds to load
